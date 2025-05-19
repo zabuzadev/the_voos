@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Voos - Agência de Viagens</title>
+    <meta name="description" content="Viagens nacionais e internacionais com os melhores preços. Pacotes, passagens aéreas, hotéis e muito mais!">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-plane"></i>
+                <span>The Voos</span>
+            </div>
+            <nav class="nav-desktop">
+                <a href="#destinos">Destinos</a>
+                <a href="#promocoes">Promoções</a>
+                <a href="#pacotes">Pacotes</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#contato">Contato</a>
+            </nav>
+            <button class="menu-toggle" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <nav class="nav-mobile" id="nav-mobile">
+            <a href="#destinos">Destinos</a>
+            <a href="#promocoes">Promoções</a>
+            <a href="#pacotes">Pacotes</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section com Slideshow -->
+<section class="hero">
+    <div class="slideshow-container">
+        <!-- Os slides serão inseridos via JavaScript -->
+    </div>
+    <div class="hero-content">
+        <h1>Descubra o Mundo com a The Voos</h1>
+        <p>Viagens inesquecíveis, experiências únicas e os melhores preços do mercado</p>
+        
+        <div class="search-container">
+            <div class="search-box">
+                <div class="search-group">
+                    <label for="destination">Destino</label>
+                    <div class="input-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <input type="text" id="destination" placeholder="Para onde você quer ir?">
+                    </div>
+                </div>
+                
+                <div class="search-group">
+                    <label for="dates">Datas</label>
+                    <div class="input-icon">
+                        <i class="fas fa-calendar"></i>
+                        <input type="text" id="dates" placeholder="Quando você vai viajar?">
+                    </div>
+                </div>
+                
+                <div class="search-group">
+                    <label for="travelers">Viajantes</label>
+                    <div class="input-icon">
+                        <i class="fas fa-users"></i>
+                        <input type="text" id="travelers" placeholder="Quantas pessoas?">
+                    </div>
+                </div>
+                
+                <div class="search-button">
+                    <button class="btn btn-search" onclick="searchTrip()">
+                        <i class="fas fa-search"></i>
+                        <span>Buscar</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Destinos Populares -->
+    <section id="destinos" class="section">
+        <div class="container">
+            <h2>Destinos Populares</h2>
+            <p class="section-subtitle">Conheça os destinos mais procurados pelos nossos clientes</p>
+            
+            <div class="destinations-grid">
+                <!-- Destino 1 -->
+                <div class="destination-card">
+                    <div class="destination-image">
+                        <img src="/rio.jpg" alt="Rio de Janeiro">
+                        <div class="destination-overlay">
+                            <h3>Rio de Janeiro</h3>
+                            <div class="destination-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Brasil</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="destination-info">
+                        <div class="destination-price">
+                            <p class="price-label">A partir de</p>
+                            <p class="price">R$ 899</p>
+                        </div>
+                        <button class="btn btn-whatsapp btn-sm" onclick="contactWhatsApp('Interesse no destino: Rio de Janeiro')">
+                            <i class="fab fa-whatsapp"></i>
+                            Reservar
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Destino 2 -->
+                <div class="destination-card">
+                    <div class="destination-image">
+                        <img src="/cancun.jpg" alt="Cancún">
+                        <div class="destination-overlay">
+                            <h3>Cancún</h3>
+                            <div class="destination-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>México</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="destination-info">
+                        <div class="destination-price">
+                            <p class="price-label">A partir de</p>
+                            <p class="price">R$ 3.599</p>
+                        </div>
+                        <button class="btn btn-whatsapp btn-sm" onclick="contactWhatsApp('Interesse no destino: Cancún')">
+                            <i class="fab fa-whatsapp"></i>
+                            Reservar
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Destino 3 -->
+                <div class="destination-card">
+                    <div class="destination-image">
+                        <img src="/paris.jpg" alt="Paris">
+                        <div class="destination-overlay">
+                            <h3>Paris</h3>
+                            <div class="destination-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>França</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="destination-info">
+                        <div class="destination-price">
+                            <p class="price-label">A partir de</p>
+                            <p class="price">R$ 4.299</p>
+                        </div>
+                        <button class="btn btn-whatsapp btn-sm" onclick="contactWhatsApp('Interesse no destino: Paris')">
+                            <i class="fab fa-whatsapp"></i>
+                            Reservar
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Destino 4 -->
+                <div class="destination-card">
+                    <div class="destination-image">
+                        <img src="/orlando.jpg" alt="Orlando">
+                        <div class="destination-overlay">
+                            <h3>Orlando</h3>
+                            <div class="destination-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Estados Unidos</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="destination-info">
+                        <div class="destination-price">
+                            <p class="price-label">A partir de</p>
+                            <p class="price">R$ 3.999</p>
+                        </div>
+                        <button class="btn btn-whatsapp btn-sm" onclick="contactWhatsApp('Interesse no destino: Orlando')">
+                            <i class="fab fa-whatsapp"></i>
+                            Reservar
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <button class="btn btn-whatsapp" onclick="contactWhatsApp('Quero ver todos os destinos')">
+                    <i class="fab fa-whatsapp"></i>
+                    Ver todos os destinos
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promoções -->
+    <section id="promocoes" class="section section-alt">
+        <div class="container">
+            <h2>Ofertas Imperdíveis</h2>
+            <p class="section-subtitle">Aproveite nossas promoções por tempo limitado</p>
+            
+            <div class="promotions-grid">
+                <!-- Promoção 1 -->
+                <div class="promotion-card">
+                    <div class="promotion-image">
+                        <img src="/nordeste.jpeg" alt="Promoção Nordeste">
+                        <div class="discount-badge">-30%</div>
+                    </div>
+                    <div class="promotion-content">
+                        <h3>Pacote Nordeste</h3>
+                        <p>7 dias em Porto de Galinhas com passagens e hospedagem</p>
+                        <div class="promotion-price">
+                            <div>
+                                <span class="old-price">R$ 3.999</span>
+                                <p class="new-price">R$ 2.799</p>
+                            </div>
+                            <button class="btn btn-whatsapp btn-sm" onclick="contactWhatsApp('Interesse na promoção: Pacote Nordeste')">
+                                <i class="fab fa-whatsapp"></i>
+                                Reservar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Promoção 2 -->
+                <div class="promotion-card">
+                    <div class="promotion-image">
+                        <img src="/gramado.webp" alt="Promoção Gramado">
+                        <div class="discount-badge">-25%</div>
+                    </div>
+                    <div class="promotion-content">
+                        <h3>Gramado e Canela</h3>
+                        <p>5 dias com passeios inclusos e hospedagem de luxo</p>
+                        <div class="promotion-price">
+                            <div>
+                                <span class="old-price">R$ 2.499</span>
+                                <p class="new-price">R$ 1.875</p>
+                            </div>
+                            <button class="btn btn-whatsapp btn-sm" onclick="contactWhatsApp('Interesse na promoção: Gramado e Canela')">
+                                <i class="fab fa-whatsapp"></i>
+                                Reservar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Promoção 3 -->
+                <div class="promotion-card">
+                    <div class="promotion-image">
+                        <img src="/argentins.jpg" alt="Promoção Buenos Aires">
+                        <div class="discount-badge">-40%</div>
+                    </div>
+                    <div class="promotion-content">
+                        <h3>Buenos Aires</h3>
+                        <p>6 dias com passagens, hospedagem e city tour</p>
+                        <div class="promotion-price">
+                            <div>
+                                <span class="old-price">R$ 4.299</span>
+                                <p class="new-price">R$ 2.579</p>
+                            </div>
+                            <button class="btn btn-whatsapp btn-sm" onclick="contactWhatsApp('Interesse na promoção: Buenos Aires')">
+                                <i class="fab fa-whatsapp"></i>
+                                Reservar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <!-- Pacotes -->
+    <section id="pacotes" class="section">
+        <div class="container">
+            <h2>Pacotes Completos</h2>
+            <p class="section-subtitle">Viagens com tudo incluso para você aproveitar sem preocupações</p>
+            
+            <div class="packages-grid">
+                <!-- Pacote 1 -->
+                <div class="package-card">
+                    <img src="/11.jpg" alt="Europa Clássica">
+                    <div class="package-content">
+                        <div class="package-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span>4.9/5</span>
+                        </div>
+                        <h3>Europa Clássica</h3>
+                        <p>15 dias visitando Paris, Roma, Madri e Lisboa</p>
+                        
+                        <ul class="package-features">
+                            <li><i class="fas fa-check"></i> Passagens aéreas</li>
+                            <li><i class="fas fa-check"></i> Hotéis 4 estrelas</li>
+                            <li><i class="fas fa-check"></i> Café da manhã</li>
+                            <li><i class="fas fa-check"></i> Passeios guiados</li>
+                        </ul>
+                        
+                        <div class="package-price">
+                            <div>
+                                <p class="price-label">Preço por pessoa</p>
+                                <p class="price">R$ 12.999</p>
+                            </div>
+                            <button class="btn btn-whatsapp btn-sm" onclick="contactWhatsApp('Interesse no pacote: Europa Clássica')">
+                                <i class="fab fa-whatsapp"></i>
+                                Reservar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pacote 2 -->
+                <div class="package-card">
+                    <img src="/caribe.jpeg" alt="Caribe Premium">
+                    <div class="package-content">
+                        <div class="package-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span>4.8/5</span>
+                        </div>
+                        <h3>Caribe Premium</h3>
+                        <p>10 dias em resorts all-inclusive em Punta Cana</p>
+                        
+                        <ul class="package-features">
+                            <li><i class="fas fa-check"></i> Passagens aéreas</li>
+                            <li><i class="fas fa-check"></i> Resort 5 estrelas</li>
+                            <li><i class="fas fa-check"></i> All inclusive</li>
+                            <li><i class="fas fa-check"></i> Atividades aquáticas</li>
+                        </ul>
+                        
+                        <div class="package-price">
+                            <div>
+                                <p class="price-label">Preço por pessoa</p>
+                                <p class="price">R$ 8.999</p>
+                            </div>
+                            <button class="btn btn-whatsapp btn-sm" onclick="contactWhatsApp('Interesse no pacote: Caribe Premium')">
+                                <i class="fab fa-whatsapp"></i>
+                                Reservar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pacote 3 -->
+                <div class="package-card">
+                    <img src="/patagonia.webp" alt="Patagônia Aventura">
+                    <div class="package-content">
+                        <div class="package-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span>4.7/5</span>
+                        </div>
+                        <h3>Patagônia Aventura</h3>
+                        <p>12 dias explorando o melhor da Patagônia Argentina e Chilena</p>
+                        
+                        <ul class="package-features">
+                            <li><i class="fas fa-check"></i> Passagens aéreas</li>
+                            <li><i class="fas fa-check"></i> Hospedagem</li>
+                            <li><i class="fas fa-check"></i> Guia especializado</li>
+                            <li><i class="fas fa-check"></i> Equipamentos</li>
+                        </ul>
+                        
+                        <div class="package-price">
+                            <div>
+                                <p class="price-label">Preço por pessoa</p>
+                                <p class="price">R$ 9.499</p>
+                            </div>
+                            <button class="btn btn-whatsapp btn-sm" onclick="contactWhatsApp('Interesse no pacote: Patagônia Aventura')">
+                                <i class="fab fa-whatsapp"></i>
+                                Reservar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <button class="btn btn-whatsapp" onclick="contactWhatsApp('Quero ver todos os pacotes')">
+                    <i class="fab fa-whatsapp"></i>
+                    Ver todos os pacotes
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços -->
+    <section class="section section-services">
+        <div class="container">
+            <h2 class="text-white">Nossos Serviços</h2>
+            
+            <div class="services-grid">
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <h3>Passagens Aéreas</h3>
+                    <p>Melhores preços e rotas</p>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-hotel"></i>
+                    </div>
+                    <h3>Hotéis</h3>
+                    <p>Hospedagens selecionadas</p>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-compass"></i>
+                    </div>
+                    <h3>Pacotes Completos</h3>
+                    <p>Tudo incluso para sua viagem</p>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3>Aluguel de Carros</h3>
+                    <p>Liberdade para explorar</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section class="section">
+        <div class="container">
+            <h2>O que nossos clientes dizem</h2>
+            <p class="section-subtitle">Experiências reais de quem viajou conosco</p>
+            
+            <div class="testimonials-grid">
+                <!-- Depoimento 1 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="/feliz-mulher-bem-sucedida-posando-com-bracos-cruzados.jpg" alt="Mariana Silva" class="testimonial-avatar">
+                        <div>
+                            <h4>Mariana Silva</h4>
+                            <p>São Paulo, SP</p>
+                        </div>
+                    </div>
+                    
+                    <p class="testimonial-text">"Viajei para Paris com minha família e foi incrível! Tudo organizado perfeitamente, sem nenhuma dor de cabeça. Recomendo muito a The Voos!"</p>
+                    
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Depoimento 2 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="/jovem-sorrindo-enquanto-se-diverte.jpg" alt="Carlos Mendes" class="testimonial-avatar">
+                        <div>
+                            <h4>Carlos Mendes</h4>
+                            <p>Rio de Janeiro, RJ</p>
+                        </div>
+                    </div>
+                    
+                    <p class="testimonial-text">"Já é a terceira vez que viajo com a The Voos. O atendimento é excelente e os preços são sempre competitivos. Não troco por nenhuma outra agência!"</p>
+                    
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Depoimento 3 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="/mulher-de-negocios-elegante-e-confiante-sorrindo.jpg" alt="Fernanda Costa" class="testimonial-avatar">
+                        <div>
+                            <h4>Fernanda Costa</h4>
+                            <p>Belo Horizonte, MG</p>
+                        </div>
+                    </div>
+                    
+                    <p class="testimonial-text">"Minha viagem para Cancún foi perfeita! Hotel maravilhoso, transfers pontuais e o suporte durante toda a viagem foi excepcional."</p>
+                    
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre -->
+    <section id="sobre" class="section section-alt">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="IMG_0409.PNG" alt="Sobre a The Voos">
+                </div>
+                
+                <div class="about-content">
+                    <h2>Sobre a The Voos</h2>
+                    <p>Fundada em 2010, a The Voos nasceu com o propósito de proporcionar experiências de viagem inesquecíveis com o melhor custo-benefício do mercado.</p>
+                    <p>Nossa equipe é formada por profissionais apaixonados por viagens, que conhecem os destinos que oferecemos e podem dar dicas valiosas para tornar sua experiência ainda mais especial.</p>
+                    <p>Trabalhamos com os melhores fornecedores do mercado para garantir qualidade, segurança e conforto em todas as etapas da sua viagem.</p>
+                    
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">15+</span>
+                            <span class="stat-label">Anos de experiência</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Destinos</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">10k+</span>
+                            <span class="stat-label">Clientes satisfeitos</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="section">
+        <div class="container">
+            <h2>Entre em Contato</h2>
+            <p class="section-subtitle">Estamos prontos para planejar sua próxima aventura</p>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Fale Conosco</h3>
+                    <p>Nossa equipe está disponível para tirar suas dúvidas e ajudar a planejar sua viagem dos sonhos.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4>Endereço</h4>
+                                <p>Av. pref. Osmar Cunha, 416, sala 1108, 88015-100 - Florianópolis, SC</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4>Telefone</h4>
+                                <p>(48) 3199-7424</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4>Email</h4>
+                                <p>contato@thevoos.com.br</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn-whatsapp btn-lg" onclick="contactWhatsApp('Olá! Gostaria de mais informações sobre viagens.')">
+                        <i class="fab fa-whatsapp"></i>
+                        Fale pelo WhatsApp
+                    </button>
+                </div>
+                
+                <div class="contact-image">
+                    <img src="/mapa.png" alt="Contato The Voos">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="section section-newsletter">
+        <div class="container text-center">
+            <h2>Receba Nossas Ofertas</h2>
+            <p class="newsletter-text">Fique por dentro das melhores promoções e novidades</p>
+            <button class="btn btn-whatsapp btn-lg" onclick="contactWhatsApp('Quero receber ofertas')">
+                <i class="fab fa-whatsapp"></i>
+                Quero receber ofertas
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <i class="fas fa-plane"></i>
+                        <span>The Voos</span>
+                    </div>
+                    <p>Sua agência de viagens de confiança para destinos nacionais e internacionais.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Destinos</h3>
+                    <ul>
+                        <li><a href="#">Brasil</a></li>
+                        <li><a href="#">América do Sul</a></li>
+                        <li><a href="#">Caribe</a></li>
+                        <li><a href="#">Estados Unidos</a></li>
+                        <li><a href="#">Europa</a></li>
+                        <li><a href="#">Ásia</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Serviços</h3>
+                    <ul>
+                        <li><a href="#">Passagens Aéreas</a></li>
+                        <li><a href="#">Hotéis</a></li>
+                        <li><a href="#">Pacotes</a></li>
+                        <li><a href="#">Cruzeiros</a></li>
+                        <li><a href="#">Aluguel de Carros</a></li>
+                        <li><a href="#">Seguro Viagem</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Informações</h3>
+                    <ul>
+                        <li><a href="#">Sobre Nós</a></li>
+                        <li><a href="#">Política de Privacidade</a></li>
+                        <li><a href="#">Termos e Condições</a></li>
+                        <li><a href="#">Formas de Pagamento</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Contato</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> The Voos. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Flutuante -->
+    <div class="whatsapp-float">
+        <button class="btn-float" onclick="contactWhatsApp('Olá! Gostaria de mais informações sobre viagens.')">
+            <i class="fab fa-whatsapp"></i>
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
